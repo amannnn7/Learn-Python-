@@ -370,14 +370,56 @@ print(sum)"""
 #     print("grade D")
 
 # NESTING ( IF KE ANDER EK AUR IF LIKHNA )
-age = 34
-if age >= 18:
-    if age >= 65:
-        print("you are senior citizen and cannot drive")
-    else:
-        print("can drive")
-else:
-    print("cannot drive")
+# age = 34
+# if age >= 18:
+#     if age >= 65:
+#         print("you are senior citizen and cannot drive")
+#     else:
+#         print("can drive")
+# else:
+#     print("cannot drive")
+
+#Wap to check if a number entered by the user is odd or even
+# num = int(input("enter the number:"))
+# if num % 2 == 0:
+#     print("number is even")
+# else:
+#     print("number is odd")
+
+#WAP  TO FIND THE GREATEST OF 3 NUMBER ENTERED BY THE USER
+# num1 = int(input("enter the first number:"))
+# num2 = int(input("enter the second number:"))
+# num3 = int(input("enter the third number:"))
+# if num1 > num2 and num1 > num3:
+#     print("number 1 is greatest")
+# elif num2 > num1 and num2 > num3:
+#     print("number 2 is greatest")
+# elif num3 > num1 and num3 > num2:
+#     print("number 3 is greatest")
+# else:
+#     print("all numbers are equal")
+
+#OR
+
+# a = int(input("enter the first number:"))
+# b = int(input("enter the second number:"))
+# c = int(input("enter the third number:"))
+# if(a >= b and a >= c):
+#     print("number 1 is greatest", a)
+# elif(b >= c):
+#     print("number 2 is greatest", b)
+# else:
+#     print("number 3 is greatest", c)
+
+#WAP TO CHECK IF A NUMBER IS A MILTIPLE OF 7 OR NOT
+# num = int(input("enter the number:"))
+# if num % 7 == 0:
+#     print("number is multiple of 7")
+# else:
+#     print("number is not multiple of 7")
+
+
+
 
 
 
