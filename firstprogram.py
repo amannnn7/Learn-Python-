@@ -21,27 +21,27 @@
 
 #you can present the string in single, double or triple cort
 
-"""name1 = "sk"
-name2 = 'sk'
-name3 = '''sk'''
+# """name1 = "sk"
+# name2 = 'sk'
+# name3 = '''sk'''
 
-print(name1)
-print(name2)
-print(name3)"""
+# print(name1)
+# print(name2)
+# print(name3)"""
 
-"""age = 23
-old = False
-a = None
-print(type(old))
-print(type(a))"""
+# """age = 23
+# old = False
+# a = None
+# print(type(old))
+# print(type(a))"""
 
 # python is case sensitive means a has another value and A has another value
 # print sum
 
-"""a = 2
-b = 3
-sum = a + b
-print(sum)"""
+# """a = 2
+# b = 3
+# sum = a + b
+# print(sum)"""
 
 #change for differnece , multiplication , etc.
 
@@ -417,6 +417,139 @@ print(sum)"""
 #     print("number is multiple of 7")
 # else:
 #     print("number is not multiple of 7")
+
+# LIST IN PYTHON
+# IT CAN STORE ELEMENTS OF DIFFERENT TYPES (INTEGER, FLOAT, STRING, ETC.)
+# marks = [67,45, 98, 34]  for example 
+
+# marks = 95.4
+# marks = 87.5
+# marks = 98.6
+# marks = 67.8
+# marks = 45.6
+# ab koi new student aayega to phir se game new marks ka varible banana hoga
+# so built data function come where we can store multiple value
+
+# marks = [98.5, 67.9, 65.7, 98.6] # this built in function is called list
+# print(marks)
+# print(type(marks))
+# print(marks[0]) # same we do in string
+# print(marks[4]) # index out of range error
+
+#LIST ARE MUTABLE IN PYTHON WHERE STRING ARE IMMUTABLE(WHICH NOT CHANGES) 
+# str - "hello"
+# print(str[0])
+# str[0] = "y" # this is not allowed in python as string are immutable so we can't change the value
+# so this will give the error
+# but this is possible in python as change is possible for example
+# student = ["karan", 95.4, 17, "delhi"]
+# print(student[0])
+# student[0] = "karan kumar"
+# print(student)
+# so this will not give the error 
+
+#LIST SLICING  (similar to string slicing)
+
+# marks = [87, 68, 89, 88, 94]
+# print(marks[1:4])
+# print(marks[1:4:2]) # this will print every 2nd element
+# #  here also there in negative index concept
+# print(marks[-1]) # this will print last element
+# print(marks[-2]) # this will print second last element
+
+# LIST METHODS
+# marks = [87, 68, 89, 88, 94]
+# marks.append(45)  #add the append element at the last
+# print(marks)
+# marks.sort() #sorted in ascending order
+# print(marks)
+# # but it we tries to print marks.sort then it will print none as it change the value by going inside the marks list
+# # so it will return none
+# marks.reverse() # reverse the list
+# print(marks)
+# marks.insert(1, 78) # insert the element at index  like list.insert(index, element)
+# print(marks)
+# marks.pop(2) # remove the element 2nd from the list
+# print(marks)
+
+#TUPLES IN PYTHON 
+# tuples are immutable in python
+# tup = (87, 68, 89, 88, 94)
+# #tup[0] = 43 # not allowed 
+# print(type(tup))
+# print(tup[0])
+
+# #slicing concept is same in tuples as was in list
+# print(tup[1:4])
+#TUPLE METHOD
+# tup = (87, 68, 89, 88, 94)
+# #tup.append(45) # not allowed as tuples are immutable
+# print(tup)
+# print(tup.count(89)) # count the element in tuple
+# print(tup.index(89)) # index of the element in tuple of first occurance
+
+#WAP TO ASK THE USER TO ENTER NAME OF THEIR 3 FAVORITE MOVIE AND STORE THEN IN LIST
+# name = input("enter your name:")
+# movies = []
+# for i in range(3):
+#     movie = input("enter your favorite movie:")
+#     movies.append(movie)
+# print("your favorite movies are: ", movies)
+# # here we can also use list comprehension to store the movies in list
+  # OR
+
+# movie = []
+# mov1 = input("enter first movie name")
+# mov2 = input("enter second movie name")
+# mov3 = input("enter third movie name")
+# # here we can also use list comprehension to store the movies in list
+# movie.append(mov1)
+# movie.append(mov2)
+# movie.append(mov3)
+# print(movie)/
+
+ # OR
+
+# movie = []
+# mov = input("enter first movie name")
+# movie.append(mov)
+# mov = input("enter second movie name")
+# movie.append(mov)
+# mov = input("enter third movie name")
+# movie.append(mov)
+
+# print(movie)
+
+#OR
+# movie = []
+# movies.append(input("enter first movie name"))
+# movies.append(input("enter second movie name"))
+# movies.append(input("enter third movie name"))
+# print(movies)
+
+# WAP TO CHECK IF A LIST CONTAINS A PALINDROME OF ELEMENTS.
+# list1 = [1, 2, 1]
+# list2 = [1, 2, 3]
+# copy_list1 = list1.copy()
+# copy_list1.reverse()
+
+# if(copy_list1 == list1):
+#     print("list contains palindrome elements")
+# else:
+#      print("list does not contain palindrome elements")
+
+# WAP TO COUNT THE NUMBER OF STUDENT WITH THE "A" GRADE IN THE FOLLOWING TUPLE
+# ["C", "D", "A", "A", "B", "B", "A"]
+
+# grade = ("C", "D", "A", "A", "B", "B", "A")
+# print(grade.count("A"))
+
+# STORE THE ABOVE VALUE IN A LIST AND SORT THEM FROM "A" TO "D"
+# grade = ["C", "D", "A", "A", "B", "B", "A"]
+# grade.sort()
+# print(grade)
+
+
 
 
 
