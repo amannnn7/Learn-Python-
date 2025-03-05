@@ -538,6 +538,25 @@
 # else:
 #      print("list does not contain palindrome elements")
 
+# list = int(input("enter a number: "))
+# if str(list) == str(list)[::-1]:
+#     print("number is palindrome")
+# else:
+#    print("number is not palindrome")
+
+#OR
+# a = int(input("enter a number: "))
+# sum = 0 #we have to initialize the sum before declaring it otherwise it will take a garbadge value
+# b = a
+# while a > 0:
+#    rem = a % 10  # for example it take 141 so after performing modulo it will give 1 as remainder
+#    sum = sum*10 + rem # here we declare the sum / initiality sum is zero so sum = 0*10 + 1 = 1
+#    a = a // 10
+# if b == sum:
+#     print("number is palindrome")
+# else:
+#    print("number is not palindrome")
+
 # WAP TO COUNT THE NUMBER OF STUDENT WITH THE "A" GRADE IN THE FOLLOWING TUPLE
 # ["C", "D", "A", "A", "B", "B", "A"]
 
