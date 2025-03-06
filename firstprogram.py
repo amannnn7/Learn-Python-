@@ -568,6 +568,249 @@
 # grade.sort()
 # print(grade)
 
+# DICTIONARY IN PYTHON
+# DICTIONARY IS A COLLECTION OF KEY VALUE PAIR
+# DICTIONARY IS MUTABLE
+# Dictionaries are used to store data value in key value pairs.
+# they are unordered, mutable (changeable) and don't allow duplicate keys.
+
+# info = {
+#     "name": "Rahul",
+#     "age": 20,
+#     "city": "Mumbai",
+# }
+
+# print(info)
+
+# we can store list and tuple in dictonaries
+# info = {
+#     "name": "Rahul",
+#     "age": 20,
+#     "city": "Mumbai",
+#     "hobbies": ["cricket", "football", "reading"], #list
+#     "address": ("Mumbai", "Maharashtra", "India"), #tuple
+# }
+# print(info)
+
+# info = {
+#     "name": "Rahul",
+#     "age": 20,
+#     "city": "Mumbai",
+#     "hobbies": ["cricket", "football", "reading"], #list
+#     "address": ("Mumbai", "Maharashtra", "India"), #tuple
+# }
+# print(info["name"])
+# print(info["city"])
+# print(info["address"])
+
+#assigning value 
+
+# info = {
+#     "name": "Rahul",
+#     "age": 20,
+#     "city": "Mumbai",
+#     "hobbies": ["cricket", "football", "reading"], #list
+#     "address": ("Mumbai", "Maharashtra", "India"), #tuple
+# }
+
+# info["name"] = "aman"
+# print(info["name"]) #output: aman 
+# #OR
+# print(info)# here all value will be printed after the updation
+# print(info["age"] + 10) #output: 30 
+
+#NESTED DICTIONARY 
+
+# student = {
+#     "name" : "aman",
+#     "score": {
+#         "math" : 90,
+#         "science" : 80,
+#         "english" : 70
+#      }
+# }
+# print(student)
+# print(student["score"]["math"]) #output: 90
+
+#DICTIONARY METHODS
+
+# myDict.keys() #return all keys
+# myDict.values() #reyurn all values
+# myDict.items() #return all key value pairs as tuples (key, val)
+# myDict.get(key) #return value for key if key exists, otherwise return None
+# myDict.setdefault(key, default) #return value for key if key exists, otherwise return default
+# myDict.pop(key) #remove key and return value
+# myDict.popitem() #remove and return last key-value pair
+# myDict.update(newDict) #update myDict with key-value pairs from other
+
+# student = {
+#     "name" : "aman",
+#     "score": {
+#         "math" : 90,
+#         "science" : 80,
+#         "english" : 70
+#      }
+# }
+# print(student.keys())
+# print(len(student.keys())) # return length of the key not nested key only outer layer key.
+# print(student.values())
+
+# # hum dictionary ki list ke andar ya list ko dictionary ke andar store kara sakte hai 
+# print(list(student.items()))
+# # agar hame sirf ek ki pair ko print karwana hai to 
+# pairs = list(student.items())
+# print(pairs[0]) #output: ('name', 'aman')
+
+# hum key likh ke uska value pata kar lete hai lekin yaha ek aur method aaya 
+# d.get("key") = value 
+#why we need this as we are getting the value by two methods lets understand by code
+
+# student = {
+#     "name" : "aman",
+#     "score": {
+#         "math" : 90,
+#         "science" : 80,
+#         "english" : 70
+#      }
+# }
+# print(student["name"])
+# print(student.get("name"))
+# # here both the print will return the name
+# # but if we try to access the key which is not present in the dictionary then it will throw
+# # an error but get method will return None
+# print(student["name2"]) #output: NameError
+# print(student.get("name2")) #output: None
+
+# student = {
+#     "name" : "aman",
+#     "score": {
+#         "math" : 90,
+#         "science" : 80,
+#         "english" : 70
+#      }
+# }
+
+# student.update({"city" : "mumbai"})
+# print(student) 
+
+#SETS IN PYTHON
+#set is the collection of the unordered items.
+#each element in the set must be unique and immutable
+#but set is mutable
+# nums = {1, 2, 3, 4}
+#set2 = {1, 2, 2, 2} repeated elemens stored only once, so it resolved to {1, 2}
+
+#null_sets = set() empty set syntax
+
+# collection = {1, 2, 3, 4}
+# print(collection) #output: {1, 2, 3, 4}
+# print(type(collection))
+# print(collection[0]) #output: IndexError: set indices must be integers or strings
+# print(collection[0:2]) #output: TypeError: set indices must be integers or strings
+
+# collection = set()
+# print(collection) #output: set()
+
+# SET METHODS
+# add() - adds an element to the set
+# discard() - removes an element from the set if it is a member
+# remove() - removes an element from the set if it is a member
+# pop() - removes an arbitrary element from the set
+# clear() - removes all elements from the set
+
+# collection = set()
+# collection.add(1)
+# collection.add(2)
+# collection.add(2)
+# print(collection) 
+
+# collection = set()
+# collection.add(1)
+# collection.add(2)
+# collection.remove(2)
+# print(collection)
+
+# collection = set()
+# collection.add(1)
+# collection.add(2)
+# collection.add("aman")
+# collection.add("city")
+# # we can use tuple but not list to time ke saath change ho sakti hai new element add and remove ho sakte.
+# collection.add([1, 2, 3]) # this will give no error
+# collection.add((1, 2, 3)) # this will give the error(unhashable type) unhasable ka matlab jinki valu baad me jaake change ho jaaye means immutable
+
+# print(collection)
+
+# collection = {"hello", "world", " aman", " monu"}
+# print(collection.pop()) # it will pop the element in random order.
+# print(collection.pop())
+# print(collection) # it will print the set after popping the element.  #output: {'aman', 'monu'}
+
+# there are  more methods
+# set.union() combines both set values and return new
+# set.intersection() returns a new set with elements common to the set and others
+# set.difference() returns a new set with elements in the set but not in others
+
+#  PRACTICE QUESTION
+# 1. Write a Python program to create a set of numbers from 1 to 10
+# STORE FOLLOWING WORD MEANING IN A PTHON DICTIONARY
+# table : "a piece of furniture". "list of facts and figures"
+# cat: "a small animals"
+
+# dictionary = {
+#     "cat" : "a small animals",
+#     "table" : ["a piece of furniture", "list of facts and figures"]
+    
+# }
+
+# print(dictionary)
+
+# You are given a list of subjects for students. Assume one classroom is required for 1
+#  subject. How many classrooms are needed by all students.
+#  ”python”, “java”, “C++”, “python”, “javascript”,
+#  “java”, “python”, “java”, “C++”, “C”
+
+# to yaha pe hm agar ek set bana le aur uska length nikal le to kaam ho jaayega
+
+# subject = {"python", "java", "c++", "python", "javascript", "java", "python", "java", "c++", "C"}
+# print(len(subject)) # it will print the number of unique subject
+
+#  WAP to enter marks of 3 subjects from the user and store them in a dictionary. Start with
+#  an empty dictionary & add one by one. Use subject name as key & marks as value
+
+# marks = {}
+# subject = input("Enter subject name: ")
+# marks[subject] = int(input("Enter marks: "))
+# subject = input("Enter subject name: ")
+# marks[subject] = int(input("Enter marks: "))
+# subject = input("Enter subject name: ")
+# marks[subject] = int(input("Enter marks: "))
+# print(marks) # it will print the dictionary with subject name as key and marks as value.
+
+#or
+
+# marks = {}
+# x = int(input("enter phy: "))
+# marks['phy'] = x
+# x = int(input("enter chem: "))
+# marks['chem'] = x
+# x = int(input("enter math: "))
+# marks['math'] = x
+# print(marks) # it will print the dictionary with subject name as key and marks as value.
+
+# Figure out a way to store 9 & 9.0 as separate values in the set. 
+# (You can take help of built-in data types) 
+
+# values = {9, 9.0}
+# print(values) # it will print {9.0, 9} because in set duplicate values
+
+#so we have to think differently
+
+# values = {9, 9.0, 8.23}
+# print(values)
+
+# values = {9, "9.0"}
+# print(values) # here its done.
 
 
 
@@ -575,5 +818,5 @@
 
 
 
-# if condition
-#     # code to be executed if condition is true
+
+
