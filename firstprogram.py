@@ -812,6 +812,180 @@
 # values = {9, "9.0"}
 # print(values) # here its done.
 
+#LOOPS IN PYTHON
+#loops are used to repeat instructions..
+
+
+#WHILE LOOP
+#  while condition:
+#        instruction
+
+# while True :
+#     print("Hello, World!") #it will print infinite time as true to true hi rahega
+
+# so we need to define a value till which the while loop will work
+
+# count = 1
+# while count <=5 :
+#   print("hello")
+#   count = count + 1
+
+# print(count) # this will print the count value which is 6
+# count variable ko iteration bolte hai 
+# loop ke andar run krne ko iteration bolte hai 
+
+# i = 1
+# while i <=5:
+#    print("hello")
+#    i += 1
+
+# print number 1 to 5
+# i = 1
+# while i <=5:
+#     print(i)
+#     i += 1
+
+# PRACTICE QUESTION 
+# PRINT NUMBER FROM 1 TO 100
+
+# i = 1
+# while i<=100:
+#     print(i)
+#     i += 1
+
+# PRINT NUMBER FROM 100 TO 1
+
+# i = 100
+# while i>=1:
+#     print(i)
+#     i -= 1
+
+#Print the multiplication table of a number n.
+
+# i = 1
+# while i<=10:
+#     print(3*i)
+#     i += 1
+
+
+# By taking input from the user
+# table = int(input("enter your number:"))
+# i = 1
+# while i<=10:
+#     print(table*i)
+#     i += 1
+    
+# Print the elements of the following list using a loop: 
+# [1, 4, 9, 16, 25, 36, 49, 64, 81,100]
+
+# num = [1, 4, 9, 16, 25, 36, 49, 64, 81,100]
+# idx = 0
+# while idx < len(num):
+#     print(idx)
+#     idx +=1 # if we write this code the output will be 0 to 9
+  
+
+# num = [1, 4, 9, 16, 25, 36, 49, 64, 81,100]
+# idx = 0
+# while idx < len(num):
+#     print(num[idx]) #num[0] #num[1]......
+#     idx +=1
+# this process is called traverse as we are going to each and every element
+
+
+#  Search for a number x in this tuple using loop:
+#  (1, 4, 9, 16, 25, 36, 49, 64, 81, 100) 
+# num = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100) 
+
+# i = 0
+# while i < len(num):
+#     print(num[1])
+#     i += 1
+# this will print the element of num
+# now the code for the actual question 
+
+# num = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100) 
+
+# x = 36 # hame x= 36 ke liye search krna hai jo list me present bhi hai 
+
+# i = 0 #initialization
+# while i < len(num):
+#     if(num[i] == x):
+#         print("number found") 
+#     i += 1
+
+
+# now how loop works like we have more occurance of the element
+# num = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 36) 
+
+# x = 36 # hame x= 36 ke liye search krna hai jo list me present bhi hai 
+
+# i = 0 #initialization
+# while i < len(num):
+#     if(num[i] == x):
+#         print("number found at idx", i) 
+
+#     else:
+#         print("finding...")
+#         i += 1
+
+
+# BREAK AND CONTINUE
+# BREAK IS USED TO TERMINATE THE LOOP WHEN ENCOUNTERED
+# CONTINUE IS USED TO SKIP THE CURRENT ITERATION AND MOVE TO THE NEXT ONE
+
+# i = 1
+# while i<=100:
+#     print(i)
+#     if (i == 20):
+#         break
+#     i += 1
+
+
+# num = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 36) 
+
+# x = 36 # hame x= 36 ke liye search krna hai jo list me present bhi hai 
+
+# i = 0 #initialization
+# while i < len(num):
+#     if(num[i] == x):
+#         print("number found at idx", i) 
+#         break
+#     else:
+#         print("finding...")
+#         i += 1
+
+
+# i = 1
+# while i<=100:
+#   if (i == 20):
+#     i += 1
+#     continue #skip that number
+#   print(i)
+#   i += 1
+  #this will print the whole number except 20
+
+# we want to print all the even number from 1 to 100
+# i = 1
+# while i<=100:
+#   if (i%2 == 0):
+#     i += 1
+#     continue 
+#   print(i)
+#   i += 1
+
+#LOOPS IN PyTHON
+# Loops are used for sequential for transversing list, tupe, string, etc.
+#syntax
+# for Loops
+#  for el in list: 
+    #some work
+
+#for loop with else
+# for el in list: 
+#    #some work
+# else: 
+#    #work when loop ends
 
 
 
