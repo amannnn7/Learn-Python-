@@ -987,6 +987,319 @@
 # else: 
 #    #work when loop ends
 
+# nums = [1, 2, 3, 4, 5]
+# for val in nums: # pehle hamari value 1 hogi phir 2 and so on
+#     print(val) # ye print kr dega 1,2,3,4,5
+
+# nums = [1, 2, 3, 4, 5]
+# for val in nums: 
+#     print(val)
+# else:
+#     print("End") 
+# now understand why we are using else  
+# this can be used where we use break
+#if we want to search the element in a string
+
+# str = ("amankumar")
+# for char in str:
+#     if char == "a":
+#        print(" o found")
+#        break
+# else:
+#     print("End")
+
+#   #this will print "o found" because "a" is present in the string
+# and print the character of the string
+# str = ("kumar")
+# for char in str:
+#     if char == "a":
+#        print("o found")
+#        break
+#     print(char)
+# else:
+#     print("End")
+
+#  Print the elements of the following list using a loop: 
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# number = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# for num in number:
+#     print(num)  # Output: 1, 4, 9, 16,
+
+# Search for a number x in this tuple using loop:
+#  [1, 4, 9, 16, 25, 36, 49, 64, 81, 100] 
+
+
+# number = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# x = 25
+# for num in number:
+#     if num == x:
+#         print("Number found")
+#         break
+#     else:
+#         print("Number not found") 
+         # Output: Number found
+
+# another method to found the number with index
+
+# number = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100] # this process of searching is called linera search
+# x = 25
+# idx = 0
+# for num in number:
+#     if (num == x):
+#         print("Number found at idx", idx)
+#     idx += 1
+
+# RANGE IN PYTHON
+# Range functions returns a sequence of numbers, starting from 0 by default, and increments by
+#  1 (by default), and stops before a specified number.
+# range( start?, stop, step)
+# start: The starting number of the sequence. Default is 0.
+# stop: The end value of the sequence. This is exclusive, meaning that the generated numbers never
+#  reach this value.
+# step: The difference between each number in the sequence. Default is 1.
+# step and start are optional 
+# seq = range(5)
+# print(list(seq))  # Output: [0, 1, 2, 3, 4]
+
+#Or
+
+# seq = range(5)
+# for i in seq:
+#     print(i)
+
+
+# for i in range(10): #range(stop)
+#     print(i)  # Output: 0, 1, 2, 3, 4
+
+# for i in range(2, 10): #range(start, stop)
+#     print(i) 
+
+# for i in range(2, 10, 2): #range(start, stop, step)
+#     print(i) 
+
+# we want to print the even number from 1 to 100
+# for i in range(2, 101, 2): #range(start, stop, step)
+#     print(i)
+
+# Print numbers from 1 to 100. 
+# for i in range(1, 100):
+#     print(i)  # Output: 1, 2, 3, 4,
+
+# Print numbers from 100 to 1. 
+
+# for i in range(100, 0, -1):
+#     print(i)
+
+
+# Print the multiplication table of a number n. 
+# n = int(input("Enter a number:"))
+# for i in range(1, 11):
+#     print(n * i)
+   
+# Print the first n natural numbers.
+# n = int(input("Enter a number:"))
+# for i in range(n):
+#     print(i)
+
+
+#PASS STATEMENT
+# pass is a null statement that does nothing. It is used as a placeholder for future code.
+# SYNTAX
+#  for el in range(10): 
+#      pass
+
+# for i in range(5):
+#     pass
+# print("hi")
+    
+# Let‘s Practice
+# WAP to find the sum of first n natural numbers. (using while)
+# n = int(input("Enter a number:"))
+# sum = 0
+# for i in range(1, n+1):
+#     sum = sum + i
+
+# print("total sum", sum)
+
+# now using while loop
+# n = int(input("Enter a number:"))
+# sum = 0
+# i = 1
+# while i <= n:
+#     sum = sum + i
+#     i = i + 1
+# print("total sum", sum)
+
+
+
+# WAP to find the factorial of first n numbers. (using for)
+# n = int(input("Enter a number:"))
+
+# fact = 1 # we cannot initialize fact by 0 otherwise it will multiply by 0 
+# i = 1
+# while i <= n:
+#     fact = fact * i
+#     i = i + 1
+# print("total fact", fact)
+
+# using for
+# n = int(input("Enter a number:"))
+# fact = 0
+# for i in range(1, n+1):
+#     fact = fact * i
+
+# print("factorial=", fact)
+
+
+# Functions in Python
+# Block of statements that perform a specific task.
+# def func_name( param1, param2..) : 
+#     #some work
+#     return val 
+# func_name( arg1, arg2 ..) #function call  # args wo value hao jo parameter k2e andar jaake store ho jaayega
+# if we need to write a block of code 2 or 3 times in our code then we have to convert that into a function
+
+# def calc_sum(a, b):
+#     sum = a + b
+#     print(sum)
+#     return sum
+# calc_sum(10, 20) #function call, the value 10 and 20 are arguments
+
+# calculate the avg of 3 number
+# def cal_avg(a, b, c):
+#     sum = a + b + c
+#     avg = sum / 3
+#     print(avg)
+#     return avg
+# cal_avg(10, 20, 30) #function call, the value 10, 20, 30
+
+#TYPES IN PYTHON
+# 1. BUILT IN function  [ print(), len(), type(), range()]
+# 2. USER DEFINED function
+
+# Default Parameters
+# Assigning a default value to parameter, which is used when no argument is passed
+
+# def calc_sum(a = 1, b = 1):
+#     sum = a + b
+#     print(sum)
+#     return sum
+# calc_sum()   #here we didn't pass any value so it will take default value which we had passed during defining a function
+# we always give default value from last first we give it to b then a
+
+# Let‘s Practice
+#  WAF to print the length of a list. ( list is the parameter)
+# list = [1, 2, 3, 4, 5]
+# def print_len(list):
+#     print(len(list))
+# print_len(list)
+
+#  WAF to print the elements of a list in a single line. ( list is the parameter)
+# list = [1, 2, 3, 4, 5]
+# def print_elements(list):
+#     print(*list)
+# print_elements(list)
+
+#OR
+# list = [1, 2, 3, 4, 5]
+# def print_elements(list):
+#     for element in list:
+#         print(element, end = ' ')
+# print_elements(list)
+    
+
+
+#  WAF to find the factorial of n. (n is the parameter)
+# def cal_fact(n):
+#     fact = 1
+#     for i in range(1, n + 1):
+#         fact = fact * i
+#     print(fact)
+# cal_fact(int(input("enter a number:")))
+
+
+
+#  WAF to find the sum of n natural numbers. (n is the parameter)
+# def cal_sum(n):
+#     sum = 0
+#     for i in range(1, n + 1):
+#         sum = sum + i
+#     print(sum)
+# cal_sum(int(input("enter a number:")))
+
+
+#  WAF to convert USD to INR.
+
+# def converter(usd_val):
+#     inr_val = usd_val * 80
+#     print(usd_val,"USD=", inr_val, "INR")
+# converter(100)  # here we are passing 100 as an argument to the function converter()
+
+# Recursion
+#  When a function calls itself repeatedly. 
+#prints n to 1 backwards
+
+# def show(n):
+#     print(n)
+# show(5) # this will print 5
+# but we want to print 5,4,3,2,1 in only one function call
+# means we call show 1 time and it will print all the number
+# so here we also run a loop but we have do it by recursion
+
+# def show(n):
+#     if (n == 0): # jab wo number 0 ho jaaye to hum return kar jaaye
+#         return
+#     print(n)
+#     show(n-1)
+# show(5)
+# this function is called recursive function
+
+# recursion through factorial 
+# like returns n!
+# def fact(n):
+#     if (n == 0 or n == 1): # jab wo number 0 ho jaaye to hum
+#         return 1
+#     else:
+#         return n * fact(n-1)
+# print(fact(5))
+# n! = (n-1)! * n menas 5 factorial is 4 factorial * 5
+
+# Let‘s Practice
+# Write a recursive function to calculate the sum of first n natural numbers. 
+# def sum_natural(n):
+#     if n == 0:
+#         return 0
+#     else:
+#         return n + sum_natural(n-1)  # ye bol rha ki pehle sum of 4 cal krlo phir 5 ko add krdo , sum (3) cal krlo phir 4 ko add krdo like
+# print(sum_natural(5))
+
+#OR
+
+# def calc_sum(n):
+#     if (n == 0):
+#         return 0
+#     return calc_sum(n-1) + n
+
+# sum = calc_sum(5)
+# print(sum) #output: 15
+
+
+# Write a recursive function to print all elements in a list.
+# Hint : use list & index as parameters.
+
+# def print_list(list, idx):
+#     if (idx == len(list)):  # yaha check kiya 0 length ke barara hai nhi hai to print karwa diya 
+#         return
+#     print(list[idx])
+#     print_list(list, idx+1)
+
+# fruits = ["mango", "apple", "banana", "pineapple"]
+# print_list(fruits, 0) #output: mango, apple, banana, pineapple
+  
+
+
+
 
 
 
