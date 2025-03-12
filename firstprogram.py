@@ -1296,6 +1296,149 @@
 
 # fruits = ["mango", "apple", "banana", "pineapple"]
 # print_list(fruits, 0) #output: mango, apple, banana, pineapple
+
+#FILE INPUT / OUTPUT 
+
+#  Python can be used to perform operations on a file. (read & write data)
+#  Types of all files
+#  1.Text Files : .txt, .docx, .log etc.
+#  2. Binary Files : .mp4, .mov, .png, .jpeg etc.
+
+# Open, read & close File
+#  We have to open a file before reading or writing.
+#  f = open( “file_name”, “mode”)
+# file name are simple txt or demo.docx and mode is read or write mode
+#  r : read mode
+#  w : write mode
+#  open method help to return our file
+
+
+# f = open("demo.txt", "r")
+# data = f.read()  #read the file
+# print(data)
+# f.close()
+
+# we can pass parameter that if we want to read the particular line  
+# f = open("demo.txt", "r")
+# data = f.read(5)  #read the file
+# print(data)
+# f.close()
+
+#  we can read a single line 
+# f = open("demo.txt", "r")
+# line1 = f.readline()  #read the file
+# print(line1)
+# f.close()
+
+
+# Writing to a file
+#  f = open( “demo.txt”, “w”)
+#  f.write( “this is a new line“ ) #overwrites the entire file
+#  f = open( “demo.txt”, “a”)
+#  f.write( “this is a new line“ ) #adds to the file
+
+# f = open("demo.txt", "w")
+# f.write("this is a new line")
+# f.close()
+
+# this will automaticlly create a new file
+# f = open("sample.txt", "w")
+# f.close()/
+
+# if we want to read and write at the same time
+# f = open("demo.txt", "r+")
+# f.write("this is a new line")
+# f.close()
+
+# r+ is used for read+ overwrite and pointer start me hota hai and no truncate
+# w+ is used for read+ overwrite and pointer start and end me hota agar delete hota hai and truncate
+# a+ is used for read+ append and pointer end me hota hai and no truncate
+
+# with Syntax
+#  with open( “demo.txt”, “a”) as f: #now this will act as f
+#          data = f.read( ) 
+
+# Deleting a File
+#  using the os module
+#  Module (like a code library) is a file written by another programmer that generally has
+#  a functions we can use.
+#  import os #it is pre installed in python like if we run this then no error will come 
+#   os.remove( filename ) 
+
+# Let‘s Practice
+#  Create a new file “practice.txt” using python. Add the following data in it: 
+#  Hi everyone
+#  we are learning File I/O using Java. 
+#  I like programming in Java
+
+# with open("practice.txt","w") as f:
+#     f.write("Hi everyone\nwe are learning File I/O using Java.\nI like programming in Java")
+
+# WAF that replace all occurrences of “Java” with “python” in above file   
+#  so here we first read the data then overwrite it.
+
+# with open("practice.txt","r") as f:
+#     data = f.read()
+# new_data = data.replace("Java", "Python")
+# print(new_data)
+
+# with open("practice.txt","w") as f:
+#     f.write(new_data)
+
+# Search if the word “learning” exists in the file or not. 
+# with open("practice.txt","r") as f:
+#      data = f.read()
+#      if "learning" in data:
+#           print("Yes, the word exists in the file")
+#      else:
+#          print("No, the word does not exist in the file")
+
+# we can also write this as a function then we can call it
+# def check_for_word():
+#      word = "learning"
+#      with open("practice.txt","r") as f:
+#          data = f.read()
+#          if "learning" in data:
+#              print("Yes, the word exists in the file")
+#          else:
+#              print("No, the word does not exist in the file")
+
+# check_for_word()
+
+# WAF to find in which line of the file does the word “learning”occur first. 
+# Print -1 if word not found. 
+
+# with open("practice.txt","w") as f:
+#     f.write("Hi everyone\nwe are learning File I/O using Java.\nI like programming in Java")
+
+
+# def check_for_word():
+#      word = "learning"
+#      with open("practice.txt","r") as f:
+#          data = f.read()
+#          if "learning" in data:
+#              print("Yes, the word exists in the file")
+#          else:
+#              print("No, the word does not exist in the file")
+
+# check_for_word()
+
+# def check_for_line():
+#     word = "learning"
+#     data = True
+#     line_no = 1
+#     with open("practice.txt","r") as f:
+#         for line in f:
+#             while data:
+#                 data = f.readline()
+#                 if(word in data):
+#                     print(line_no)
+#                     return
+#                 line_no += 1
+#     return -1
+# print(check_for_line())
+
+
   
 
 
