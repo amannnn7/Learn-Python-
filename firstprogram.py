@@ -1437,6 +1437,187 @@
 #                 line_no += 1
 #     return -1
 # print(check_for_line())
+#OOPs IN PYTHON
+
+#  To map with real world scenarios, we started using objects in code.
+#  This is called object oriented programming. 
+
+# function ki wajah se redundancy decrease ho jaati hai reusability increase ho jaati hai 
+#koi chiz repeat ho rhi hai to usko combine krke ek function bana do to uski redundancy decrease ho jaati hai
+
+# Class & Object in Python
+#  Class is a blueprint for creating objects.(it tells object ke andar kya kya feature honge.)
+#  #creating class
+#  class Student:   
+# name = “karan kumar”
+#  #creating object (instance)
+#  s1 =  Student( )
+#  print( s1.name ) 
+
+# class Student:
+#     name = ("Aman") # here we define the object so every time when we call the name for any student it will print Aman
+  
+# s1 = Student() #this is an object
+# print(s1.name)
+
+# s2 = Student()
+# print(s2.name)
+
+# _ _init_ _ Function
+ 
+#  Constructor
+#  All classes have a function called __init__(), which is always executed when the object is being
+#  initiated.
+
+#  #creating class
+#  class Student: 
+# def __init__( self, fullname ):
+#  self.name =  fullname
+
+#  #creating object
+#  s1 =  Student( “karan” )
+#  print( s1.name ) 
+
+# *The self parameter is a reference to the current
+#  instance of the class, and is used to access variables
+#  that belongs to the class.
+
+# class car:
+#     color = "black"
+#     model = "maruti"
+
+# car1 = car()
+# print(car1.color)
+# print(car1.model) # output: black, maruti
+
+# class Student:
+#     name = "Aman"
+#     def __init__(self):
+#         print("adding new student in the database")
+# s1 = Student() # this () paranthesis is use to call the function def__init__
+
+
+# class Student:
+#     name = "Aman"
+#     def __init__(self, fullname): #pehle hmne object banaya phir constructor banaya
+#         self.name = fullname # we use this because we don't want to give same name to every student
+# #so jo bhi value hm student me pass karenge wo full name me aa jaayegi and self ke andar wo value assign ho jaayegi
+      
+#         print("adding new student in the database")
+# s1 = Student("Aman")
+# print(s1.name) # output: Aman
+
+# s2 = Student("Monu")
+# print(s2.name) #output: Monu
+
+# ye jitne bhi data hmne store kiya usko attribute kehte hai
+
+# class Student:
+#     name = "Aman"
+#     def __init__(self, name, marks):
+#         self.name = name 
+#         self.marks = marks
+#         print("adding new student in the database")
+# s1 = Student("Aman", 95)
+# print(s1.name, s1.marks)
+
+# s2 = Student("Monu", 91)
+# print(s2.name, s2.marks)
+
+# Class & Instance Attributes
+#  Class.attr
+#  obj.attr
+
+# class Student:
+#     college_name = "ABC" # Clg name to sare student ke liye same hi rahega to ek hi baar usko memory me define kiye hai 
+ 
+    
+#     def __init__(self, name, marks):
+#         self.name = name 
+#         self.marks = marks
+#         print("adding new student in the database")
+# s1 = Student("Aman", 95)
+# print(s1.name, s1.marks)
+
+# s2 = Student("Monu", 91)
+# print(s2.name, s2.marks)
+# print(s2.college_name) # output: ABC
+# #or
+# print(Student.college_name) # output: ABC
+
+# Methods
+#  Methods are functions that belong to objects.
+#  #creating class
+#  class Student: 
+# def __init__( self, fullname ):
+#  self.name =  fullname
+#  def hello( self ):
+#  print( “hello”, self.name)
+
+#  #creating object
+#  s1 =  Student( “karan” )
+#  s1.hello()
+
+
+# class Student:
+#     college_name = "ABC" 
+    
+#     def __init__(self, name, marks):
+#         self.name = name 
+#         self.marks = marks
+
+#     def welcome(self):
+#         print("Welcome student", self.name)
+
+#     def get_marks(self):
+#         return self.marks
+      
+# s1 = Student("Aman", 95)
+# s1.welcome() # output: Welcome student
+# print(s1.get_marks())
+
+# Let‘s Practice
+#  Create student class that takes name & marks of 3 subjects as arguments in constructor. 
+# Then create a method to print the average.
+
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+    
+#     def get_avg(self):
+#         sum = 0
+#         for val in self.marks:
+#             sum += val
+#         print("hi", self.name, "your avg score is:", sum/3)
+     
+        
+# s1 = Student("Aman", [99, 98, 97])
+# s1.get_avg()
+
+
+# Static Methods
+#  Methods that don’t use the self parameter (work at class level)
+ 
+#  class Student: 
+#      @staticmethod    #decorator
+#      def college( ):
+#          print( “ABC College” )
+ 
+#  *Decorators allow us to wrap another function in order to
+#  extend the behaviour of the wrapped function, without
+#  permanently modifying it
+
+
+# Important
+#  Abstraction
+#  Hiding the implementation details of a class and only showing the essential features to the user.
+#  Encapsulation
+#  Wrapping data and functions into a single unit (object).
+#  Inheritance
+#  Creating a new class from an existing class.
+#  Polymorphism
+#  Ability of an object to take on multiple forms.
 
 
   
