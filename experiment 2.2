@@ -1,0 +1,132 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyMpyPZTUh961cuvssneLIfY",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/amannnn7/Learn-Python-/blob/main/experiment%202.2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1rma_pHPzHOC",
+        "outputId": "a4928ec6-367b-438c-ac2c-aed0bfa390c3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Collecting tinydb\n",
+            "  Downloading tinydb-4.8.2-py3-none-any.whl.metadata (6.7 kB)\n",
+            "Downloading tinydb-4.8.2-py3-none-any.whl (24 kB)\n",
+            "Installing collected packages: tinydb\n",
+            "Successfully installed tinydb-4.8.2\n"
+          ]
+        }
+      ],
+      "source": [
+        "!pip install tinydb"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import time\n",
+        "import sqlite3\n",
+        "import random\n",
+        "from tinydb import TinyDB, Query\n",
+        "\n",
+        "# Generate a large dataset (10,000+ records)\n",
+        "categories = [\"Electronics\", \"Clothing\", \"Home Appliances\", \"Books\", \"Toys\"]\n",
+        "sample_data = [(i, f\"User_{i}\", random.choice(categories), random.randint(100, 5000)) for i in range(1, 10001)]\n",
+        "\n",
+        "# Create SQLite (Big SQL) database\n",
+        "conn = sqlite3.connect(\":memory:\")  # In-memory database for faster execution\n",
+        "cursor = conn.cursor()\n",
+        "\n",
+        "# Create sales table\n",
+        "cursor.execute(\"CREATE TABLE sales (id INTEGER, name TEXT, category TEXT, price INTEGER)\")\n",
+        "cursor.executemany(\"INSERT INTO sales VALUES (?, ?, ?, ?)\", sample_data)\n",
+        "conn.commit()\n",
+        "\n",
+        "# Create TinyDB (NoSQL) database\n",
+        "db = TinyDB(\"sales.json\")\n",
+        "db.insert_multiple([{\"id\": i, \"name\": f\"User_{i}\", \"category\": random.choice(categories), \"price\": random.randint(100, 5000)}\n",
+        "                    for i in range(1, 10001)])\n",
+        "\n",
+        "# Query Execution Time for SQLite (Big SQL)\n",
+        "start_time_sql = time.time()\n",
+        "cursor.execute(\"SELECT * FROM sales WHERE category='Electronics'\")\n",
+        "sql_result = cursor.fetchall()\n",
+        "end_time_sql = time.time()\n",
+        "sql_time = end_time_sql - start_time_sql\n",
+        "\n",
+        "# Query Execution Time for TinyDB (NoSQL)\n",
+        "start_time_nosql = time.time()\n",
+        "query = Query()\n",
+        "nosql_result = db.search(query.category == \"Electronics\")\n",
+        "end_time_nosql = time.time()\n",
+        "nosql_time = end_time_nosql - start_time_nosql\n",
+        "\n",
+        "# Output Results\n",
+        "print(f\"SQL Query Result Count: {len(sql_result)}\")\n",
+        "print(f\"NoSQL Query Result Count: {len(nosql_result)}\")\n",
+        "print(f\"SQL Execution Time: {sql_time:.6f} seconds\")\n",
+        "print(f\"NoSQL Execution Time: {nosql_time:.6f} seconds\")\n",
+        "\n",
+        "# Compare performance\n",
+        "if sql_time < nosql_time:\n",
+        "    print(\"Big SQL performs better for this dataset.\")\n",
+        "else:\n",
+        "    print(\"NoSQL performs better for this dataset.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kqOK7X0b01xr",
+        "outputId": "cf25628f-5c47-48fb-a1e4-330c196aa405"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "SQL Query Result Count: 2032\n",
+            "NoSQL Query Result Count: 8063\n",
+            "SQL Execution Time: 0.003666 seconds\n",
+            "NoSQL Execution Time: 0.098194 seconds\n",
+            "Big SQL performs better for this dataset.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
